@@ -1,15 +1,12 @@
-header {
-   /* font-size: 100px; Comando que aumenta o texto*/
-
-    border: 1px solid black;
-    background-color: red;
-    
+    /* font-size: 100px; Comando que aumenta o texto*/
     /* background-color: black; Comando para alterar cor de fundo */
-}
+     /* header, nav, section, article, aside, main, foote  A virgula serve como E */
 
-nav, section, article, aside, main, footer{
+
+.estruturas_semanticas{
     border: 1px solid black;
-
+    width: 200px;
+    height: ;
 }
 
 article{

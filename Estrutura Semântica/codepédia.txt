@@ -1,0 +1,7 @@
+<header> Conteúdo Semântico de cabeçalho
+<nav> Conteúdo Semântico de navegação              
+<main> Conteúdo Semântico principal 
+<section>Conteúdo Semântico de seção
+<article> Conteúdo Semântico de artigos     
+<aside> Conteúdo Semântico lateral   
+<footer> Conteúdo Semântico rodapé 
