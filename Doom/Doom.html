@@ -22,7 +22,6 @@
       color: white;
       font-family: 'Michroma', sans-serif;
       text-align: center;
-      padding: 50px;
     }
 
     h1 {
@@ -82,31 +81,92 @@
         color: red;
     }
 
-    
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(20, 0, 0, 0.8);  
+  border-bottom: 2px solid rgba(104, 12, 4, 1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 40px;
+  transition: top 0.3s ease-in-out;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 25px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: crimson;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.lenda-container {
+  border: 3px solid red;
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 900px;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 20px crimson;
+  border-radius: 15px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
 
   </style>
 </head>
 
-  <h2 class="com-borda">The<span class="vermelho"> DOOM</span> Slayer</h2>
+<body>
+<header class="site-header">
+    <h1 class="logo">
+      <img src="78-781211_doom-logo-doom-eternal-logo-png.png" alt="DOOM logo" width="150">
+    </h1>
+    <nav class="menu">
+        <ul>
+         <li><a href="DoomTest.html">Início</a></li>
+          <li><a href="#maligog">Maligog</a></li>
+          <li><a href="#davoth">Davoth</a></li>
+         <li><a href="DoomPage3.html">Demônios</a></li>
+        </ul>
+    </nav>
+</header>
 
-  <hr class="vermelho">
+  <img src="Doom.png" alt="Doom" width="400" id="início" style="margin-top:150px">
 
-  <img src="Doom.png" alt="Doom" width="400">
-
-  <hr>
-
-  <h3 class="com-borda">O Auge de Doom Guy</h3>
-
-  <p class="com-borda">
-    A jornada sangrenta de <b><i>Doom Guy</i></b> o levou a enfrentar e destruir o maior titã já
-    conhecido, chamado de <b><i>Maligog</i></b> — um demônio aterrorizador que leva a destruição por onde passa — com
-    sua força inigualável, o Doom Guy usando a Crucible, selou para sempre o destino de Maligog, assim, com os próprios
-    demônios nomeando ele como <b><i>DOOM slayer</i></b>.
+  <div class="lenda-container">
+  <h2 style="color: red;">O Início da Lenda</h2>
+  <p>
+    Muito antes de ser temido como o Doom Slayer, ele era apenas um guerreiro humano consumido pela dor e pela raiva, um homem devastado pela perda e movido por um desejo incontrolável de vingança contra os demônios que haviam destruído tudo o que ele amava. Capturado pelos Sentinelas de Argent D’Nur — uma civilização guerreira de outro mundo — ele foi lançado nas arenas de combate, onde deveria encontrar a morte como tantos outros antes dele. Mas o que os Sentinelas testemunharam foi diferente: uma fúria pura, inabalável e incessante. Nenhum oponente resistia por muito tempo; sua sede de sangue demoníaco o tornava imparável, quase bestial, mas com um propósito claro. O ponto decisivo de sua ascensão aconteceu quando enfrentou e destruiu o colossal Maligog, o Tirano — uma abominação gigantesca que devastava cidades inteiras e que nem mesmo os maiores guerreiros dos Sentinelas haviam ousado enfrentar. Ao tombar a criatura com suas próprias mãos, aquele homem ganhou mais do que respeito: ele foi consagrado com um novo nome — Doom Slayer, o Ceifador da Perdição. A partir daquele momento, não era mais apenas um homem. Era uma força viva, uma entidade forjada pela dor, armada com ódio e movida por uma fúria que nem mesmo o inferno conseguiria conter. Os próprios demônios, antes arrogantes e implacáveis, começaram a recuar diante de sua presença. Seu nome passou a ecoar como um presságio de destruição, um lembrete de que nenhum ser do inferno estaria seguro. O universo conheceu sua lenda, e o inferno, pela primeira vez... tremeu.
   </p>
+</div>
 
-  <hr>
 
-  <img src="Maligog.png" alt="Maligog" width="300">
+  <img src="Maligog.png" alt="Maligog" width="300" id="maligog">
 
   <details>
     <summary><b><span class="vermelho">MALIGOG</span></b></summary>
@@ -117,7 +177,7 @@
 
   <hr>
 
-  <h4 class="com-borda">O auge de DOOM Slayer</h4>
+  <h3 class="com-borda">O auge de DOOM Slayer</h3>
 
   <p class="com-borda">
     <b><i>DOOM Slayer</i></b> alcança seu auge ao enfrentar e derrotar <b><i>Davoth</i></b>, o Dark
@@ -129,10 +189,21 @@
   </p>
 
   <figure>
-  <img src="davoth2.png" alt="davoth unarmored" width="300"><figcaption><a href="DoomPage2.html"><p class="voltar">Saiba mais</p></a></figcaption>
+  <img src="davoth2.png" alt="davoth unarmored" width="300" id="davoth"><figcaption><a href="DoomPage2.html"><p class="voltar">Saiba mais</p></a></figcaption>
   </figure>
 
+<script>
+  let lastScrollY = window.scrollY;
+  const header = document.querySelector(".site-header");
 
-
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > lastScrollY) {
+      header.style.top = "-100px"; // Esconde
+    } else {
+      header.style.top = "0"; // Mostra
+    }
+    lastScrollY = window.scrollY;
+  });
+</script>
 </body>
 </html>
